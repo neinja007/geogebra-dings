@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
+import Link from "next/link"
 import Fuse from "fuse.js"
 import { Search, Heart } from "lucide-react"
 import { Input } from "@/components/ui/input"
@@ -93,18 +94,38 @@ export function CommandSearch() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t py-4 text-center text-sm text-muted-foreground">
-          Mit{" "}
-          <Heart className="inline size-4 fill-purple-500 text-purple-500" />{" "}
-          von Julian und{" "}
-          <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 underline"
-          >
-            Anton
-          </a>
+        <footer className="grid grid-cols-1 gap-4 border-t py-4 text-sm text-muted-foreground sm:grid-cols-3 sm:items-center">
+          <div className="text-left">
+            <Link
+              href="/datenschutz"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Datenschutz
+            </Link>
+          </div>
+          <div className="text-center">
+            Mit{" "}
+            <Heart className="inline size-4 fill-purple-500 text-purple-500" />{" "}
+            von Julian und{" "}
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline"
+            >
+              Anton
+            </a>
+          </div>
+          <div className="text-right">
+            <a
+              href="https://github.com/neinja007/geogebra-uebersicht"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Projekt ist Open-Source
+            </a>
+          </div>
         </footer>
       </div>
     </div>
