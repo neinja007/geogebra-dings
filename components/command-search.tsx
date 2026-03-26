@@ -62,9 +62,9 @@ export function CommandSearch() {
             <Image
               src="/logo.png"
               alt=""
-              width={32}
-              height={32}
-              className="size-8 shrink-0"
+              width={48}
+              height={48}
+              className="size-12 shrink-0"
             />
             <h1 className="text-xl font-semibold tracking-tight">
               GeoGebra Befehle und Werkzeuge
