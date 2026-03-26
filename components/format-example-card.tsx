@@ -1,11 +1,7 @@
+import { Video } from "lucide-react"
+
 import { Badge } from "@/components/ui/badge"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { CommandVideo } from "@/components/command-video"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 /** Static example card explaining the layout (idle state). */
 export function FormatExampleCard() {
@@ -24,18 +20,20 @@ export function FormatExampleCard() {
 
             <div className="text-sm text-foreground">
               <span className="font-medium">Parameter: </span>
-              Parameter 1, Parameter 2, (Optionales Argument)
+              Parameter 1, (Optionaler Parameter)
             </div>
 
             <p className="mt-auto text-sm text-foreground">
-              Kurzbeschreibung, was der Befehl oder das Werkzeug in GeoGebra
-              bewirkt.
+              Kurzbeschreibung, wofür des nützlich ist.
             </p>
           </CardContent>
         </div>
 
         <div className="flex items-center p-4 lg:w-1/2 lg:pl-0">
-          <CommandVideo basename="Funktionsname" />
+          <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-lg border border-border bg-muted/40 px-4 text-center text-sm text-foreground">
+            <Video className="size-8 opacity-80" aria-hidden />
+            <span>Beschreibendes Video</span>
+          </div>
         </div>
       </div>
     </Card>

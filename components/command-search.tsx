@@ -32,8 +32,7 @@ export function CommandSearch() {
   const [query, setQuery] = useState("")
   const [selectedTag, setSelectedTag] = useState(ALL_TAGS_VALUE)
 
-  const isIdle =
-    query.trim() === "" && selectedTag === ALL_TAGS_VALUE
+  const isIdle = query.trim() === "" && selectedTag === ALL_TAGS_VALUE
 
   const results = useMemo(() => {
     let pool: Element[]
@@ -93,13 +92,11 @@ export function CommandSearch() {
         <main className="flex-1 py-8">
           {isIdle ? (
             <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
-              <div className="space-y-4 text-sm text-foreground">
+              <div className="mt-5 space-y-4 text-foreground">
+                <p>Diese Liste wurde im Rahmen eines Matheauftrags erstellt.</p>
                 <p>
-                  Diese Liste wurde im Rahmen eines Matheauftrags erstellt.
-                </p>
-                <p>
-                  Gib etwas in die Funktionsleiste ein, um mit der Suche zu
-                  beginnen.
+                  Gib etwas in die Funktionsleiste ein oder wähle eine Kategorie
+                  aus, um mit der Suche zu beginnen.
                 </p>
                 <p>
                   Fehler, Verbesserungsvorschläge oder fehlende Befehle und
@@ -110,7 +107,14 @@ export function CommandSearch() {
                   >
                     support@lateininator.com
                   </a>{" "}
-                  schicken.
+                  schicken. Oder an{" "}
+                  <a
+                    href="mailto:julian.friedrich@khev.at"
+                    className="text-blue-500 underline underline-offset-2"
+                  >
+                    julian.friedrich@khev.at
+                  </a>
+                  , aber nur mit einem vernünftigen Grund.
                 </p>
               </div>
               <div className="min-w-0">
