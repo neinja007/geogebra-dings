@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select"
 import { elements, tags, type Element } from "@/lib/commands"
 import { CommandCard } from "@/components/command-card"
+import { FormatExampleCard } from "@/components/format-example-card"
 
 const ALL_TAGS_VALUE = "__all__"
 
@@ -30,6 +31,9 @@ const fuse = new Fuse<Element>(elements, {
 export function CommandSearch() {
   const [query, setQuery] = useState("")
   const [selectedTag, setSelectedTag] = useState(ALL_TAGS_VALUE)
+
+  const isIdle =
+    query.trim() === "" && selectedTag === ALL_TAGS_VALUE
 
   const results = useMemo(() => {
     let pool: Element[]
@@ -87,7 +91,33 @@ export function CommandSearch() {
 
         {/* Results */}
         <main className="flex-1 py-8">
-          {results.length === 0 ? (
+          {isIdle ? (
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+              <div className="space-y-4 text-sm text-foreground">
+                <p>
+                  Diese Liste wurde im Rahmen eines Matheauftrags erstellt.
+                </p>
+                <p>
+                  Gib etwas in die Funktionsleiste ein, um mit der Suche zu
+                  beginnen.
+                </p>
+                <p>
+                  Fehler, Verbesserungsvorschläge oder fehlende Befehle und
+                  Tools bitte an{" "}
+                  <a
+                    href="mailto:support@lateininator.com"
+                    className="text-blue-500 underline underline-offset-2"
+                  >
+                    support@lateininator.com
+                  </a>{" "}
+                  schicken.
+                </p>
+              </div>
+              <div className="min-w-0">
+                <FormatExampleCard />
+              </div>
+            </div>
+          ) : results.length === 0 ? (
             <p className="py-12 text-center text-muted-foreground">
               Keine Ergebnisse gefunden.
             </p>
