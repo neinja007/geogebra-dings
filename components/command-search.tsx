@@ -21,7 +21,7 @@ const fuse = new Fuse<Element>(elements, {
     { name: "name", weight: 2 },
     { name: "description", weight: 1.3 },
     { name: "tags", weight: 1 },
-    { name: "arguments", weight: 1 },
+    { name: "parameters", weight: 1 },
   ],
   threshold: 0.4,
 })
