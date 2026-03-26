@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { EXAMPLE_VIDEO_SUFFIX } from "@/config"
+import { CommandVideo } from "@/components/command-video"
 import type { Element } from "@/lib/commands"
 
 export function CommandCard({ element }: { element: Element }) {
@@ -51,14 +51,7 @@ export function CommandCard({ element }: { element: Element }) {
 
         {/* Right half: video */}
         <div className="flex items-center p-4 lg:w-1/2 lg:pl-0">
-          <video
-            className="w-full rounded-lg"
-            src={`/videos/${element.name}.${EXAMPLE_VIDEO_SUFFIX}`}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+          <CommandVideo basename={element.name} />
         </div>
       </div>
     </Card>
