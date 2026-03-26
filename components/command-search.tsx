@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { elements, tags, type Element } from "@/lib/commands"
+import { CommandCard } from "@/components/command-card"
 
 const ALL_TAGS_VALUE = "__all__"
 
@@ -85,12 +86,18 @@ export function CommandSearch() {
         </header>
 
         {/* Results */}
-        <main className="flex flex-1 items-center justify-center py-12">
-          <p className="text-muted-foreground">
-            {results.length === 0 && elements.length === 0
-              ? "Noch keine Befehle vorhanden."
-              : "results"}
-          </p>
+        <main className="flex-1 py-8">
+          {results.length === 0 ? (
+            <p className="py-12 text-center text-muted-foreground">
+              Keine Ergebnisse gefunden.
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+              {results.map((el) => (
+                <CommandCard key={el.name} element={el} />
+              ))}
+            </div>
+          )}
         </main>
 
         {/* Footer */}
