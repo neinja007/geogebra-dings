@@ -60,9 +60,7 @@ export function CommandSearch() {
         className="pointer-events-none fixed inset-y-0 left-1/2 z-1 w-full max-w-6xl -translate-x-1/2 px-4 sm:px-6"
         aria-hidden
       >
-        <div
-          className="absolute top-1/2 left-1/2 aspect-square w-[min(92%,40rem)] max-w-[90vw] -translate-x-1/2 -translate-y-1/2 bg-[url('/logo.png')] bg-contain bg-center bg-no-repeat opacity-[0.16] saturate-[1.55]"
-        />
+        <div className="absolute top-1/2 left-1/2 aspect-square w-[min(92%,40rem)] max-w-[90vw] -translate-x-1/2 -translate-y-1/2 bg-[url('/logo.png')] bg-contain bg-center bg-no-repeat opacity-[0.2] saturate-[1.55]" />
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 sm:px-6">
