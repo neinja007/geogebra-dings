@@ -7,16 +7,16 @@ export const tags = [
   "Analysis",
   "Algebra",
   "Vektoren",
-] as const;
+] as const
 
-export type Tag = (typeof tags)[number];
+export type Tag = (typeof tags)[number]
 
-export type Command = {
-  type: "command" | "tool";
-  name: string;
-  description: string;
-  tags: Tag[];
-  arguments: string[];
-};
+export type Element = {
+  type: "command" | "tool"
+  name: string
+  description: string
+  tags: Tag[]
+  arguments: string[]
+}
 
-export const commands: Command[] = [];
+export const elements: Element[] = []

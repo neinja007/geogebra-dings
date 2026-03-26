@@ -12,11 +12,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { commands, tags, type Command } from "@/lib/commands"
+import { elements, tags, type Element } from "@/lib/commands"
 
 const ALL_TAGS_VALUE = "__all__"
 
-const fuse = new Fuse<Command>(commands, {
+const fuse = new Fuse<Element>(elements, {
   keys: [
     { name: "name", weight: 2 },
     { name: "description", weight: 1.3 },
@@ -31,12 +31,12 @@ export function CommandSearch() {
   const [selectedTag, setSelectedTag] = useState(ALL_TAGS_VALUE)
 
   const results = useMemo(() => {
-    let pool: Command[]
+    let pool: Element[]
 
     if (query.trim()) {
       pool = fuse.search(query).map((r) => r.item)
     } else {
-      pool = commands
+      pool = elements
     }
 
     if (selectedTag !== ALL_TAGS_VALUE) {
@@ -87,7 +87,7 @@ export function CommandSearch() {
         {/* Results */}
         <main className="flex flex-1 items-center justify-center py-12">
           <p className="text-muted-foreground">
-            {results.length === 0 && commands.length === 0
+            {results.length === 0 && elements.length === 0
               ? "Noch keine Befehle vorhanden."
               : "results"}
           </p>
