@@ -1,19 +1,22 @@
+export const tags = [
+  "Polynome",
+  "Funktionen",
+  "Statistik",
+  "Wahrscheinlichkeit",
+  "Geometrie",
+  "Analysis",
+  "Algebra",
+  "Vektoren",
+] as const;
+
 export type Tag = (typeof tags)[number];
 
-export type Element = {
-	type: 'command' | 'tool';
-	name: string;
-	description: string;
-	tags?: Tag[];
+export type Command = {
+  type: "command" | "tool";
+  name: string;
+  description: string;
+  tags: Tag[];
+  arguments: string[];
 };
 
-export const tags = ['video', 'audio', 'image', 'text', 'other'] as const;
-
-export const elements: Element[] = [
-	{
-		type: 'command',
-		name: 'video',
-		description: 'Video',
-		tags: ['video']
-	}
-];
+export const commands: Command[] = [];
