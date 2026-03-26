@@ -54,8 +54,18 @@ export function CommandSearch() {
   }, [query, selectedTag])
 
   return (
-    <div className="flex min-h-svh flex-col">
-      <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 sm:px-6">
+    <div className="relative flex min-h-svh flex-col">
+      {/* Aligned to content column; vertically centered in the viewport */}
+      <div
+        className="pointer-events-none fixed inset-y-0 left-1/2 z-1 w-full max-w-6xl -translate-x-1/2 px-4 sm:px-6"
+        aria-hidden
+      >
+        <div
+          className="absolute top-1/2 left-1/2 aspect-square w-[min(92%,40rem)] max-w-[90vw] -translate-x-1/2 -translate-y-1/2 bg-[url('/logo.png')] bg-contain bg-center bg-no-repeat opacity-[0.16] saturate-[1.55]"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 sm:px-6">
         {/* Header */}
         <header className="flex flex-col gap-4 border-b py-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
