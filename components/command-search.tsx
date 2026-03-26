@@ -126,7 +126,7 @@ export function CommandSearch() {
               Keine Ergebnisse gefunden.
             </p>
           ) : (
-            <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {results.map((el) => (
                 <CommandCard key={el.name} element={el} />
               ))}
