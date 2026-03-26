@@ -13,7 +13,7 @@ export function CommandCard({ element }: { element: Element }) {
     <Card>
       <div className="flex flex-col lg:flex-row">
         {/* Left half: info */}
-        <div className="flex flex-1 flex-col lg:w-1/2">
+        <div className="flex min-h-0 flex-1 flex-col lg:w-1/2">
           <CardHeader>
             <CardTitle className="text-lg">{element.name}</CardTitle>
           </CardHeader>
@@ -28,7 +28,7 @@ export function CommandCard({ element }: { element: Element }) {
             </div>
 
             {/* Parameters */}
-            <div className="text-sm">
+            <div className="text-sm text-foreground">
               <span className="font-medium">Parameter: </span>
               {element.parameters.map((p, i) => (
                 <span key={p}>
@@ -36,17 +36,16 @@ export function CommandCard({ element }: { element: Element }) {
                   {p}
                 </span>
               ))}
-              {element.optionalParameters?.map((p) => (
-                <span key={p} className="text-muted-foreground">
-                  , {p}
+              {element.optionalParameters?.map((p, i) => (
+                <span key={p}>
+                  {(element.parameters.length > 0 || i > 0) && ", "}
+                  ({p})
                 </span>
               ))}
             </div>
 
-            {/* Description */}
-            <p className="text-sm text-muted-foreground">
-              {element.description}
-            </p>
+            {/* Description — pinned to bottom of the left column */}
+            <p className="mt-auto text-sm text-foreground">{element.description}</p>
           </CardContent>
         </div>
 
