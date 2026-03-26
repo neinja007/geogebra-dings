@@ -1,0 +1,1 @@
+export const EXAMPLE_VIDEO_SUFFIX = "mp4"
