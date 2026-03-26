@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import Fuse from "fuse.js"
 import { Search, Heart } from "lucide-react"
@@ -57,9 +58,18 @@ export function CommandSearch() {
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 sm:px-6">
         {/* Header */}
         <header className="flex flex-col gap-4 border-b py-5 sm:flex-row sm:items-center sm:justify-between">
-          <h1 className="text-xl font-semibold tracking-tight">
-            GeoGebra Befehle und Werkzeuge
-          </h1>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt=""
+              width={32}
+              height={32}
+              className="size-8 shrink-0"
+            />
+            <h1 className="text-xl font-semibold tracking-tight">
+              GeoGebra Befehle und Werkzeuge
+            </h1>
+          </div>
 
           {/* Search + Tag select — max width ⅔ of previous 56rem (max-w-4xl) */}
           <div className="flex w-full max-w-[min(100%,calc(56rem*2/3))] sm:shrink-0 sm:justify-end">
@@ -159,7 +169,7 @@ export function CommandSearch() {
           </div>
           <div className="text-right">
             <a
-              href="https://github.com/neinja007/geogebra-uebersicht"
+              href="https://github.com/neinja007/geogebra-dings"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2 hover:text-foreground"
