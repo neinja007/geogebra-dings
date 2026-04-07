@@ -28,7 +28,7 @@ export function CommandVideo({ basename, className }: CommandVideoProps) {
   return (
     <video
       className={`w-full rounded-lg ${className ?? ""}`}
-      src={`/videos/${basename}.${EXAMPLE_VIDEO_SUFFIX}`}
+      src={`/${basename}.${EXAMPLE_VIDEO_SUFFIX}`}
       autoPlay
       loop
       muted
